@@ -12,6 +12,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
@@ -51,9 +52,8 @@ fun LoginFormUI(modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        //Title
         Text(
-            "Login",
+            stringResource(R.string.login),
             fontSize = 24.sp,
             color = MaterialTheme.colorScheme.primary,
             textAlign = TextAlign.Center,
@@ -61,36 +61,32 @@ fun LoginFormUI(modifier: Modifier = Modifier) {
                 .fillMaxWidth()
                 .padding(vertical = 16.dp)
         )
-        // Email TextField
+
         OutlinedTextField(
             value = email,
             onValueChange = { email = it },
-            label = { Text(text = "Username") },
+            label = { Text(text = stringResource(R.string.username)) },
             trailingIcon = { Icon(Icons.Filled.Email, contentDescription = "Email Icon") },
             singleLine = true,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
             modifier = Modifier.fillMaxWidth()
         )
-
         Spacer(modifier = Modifier.height(16.dp)) // Space between fields
 
-        // Password TextField
         OutlinedTextField(
             value = password,
             onValueChange = { password = it },
-            label = { Text(text = "Password") },
+            label = { Text(text = stringResource(R.string.password)) },
             trailingIcon = { Icon(Icons.Filled.Lock, contentDescription = "Password Icon") },
             visualTransformation = PasswordVisualTransformation(),
             singleLine = true,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             modifier = Modifier.fillMaxWidth()
         )
-
         Spacer(modifier = Modifier.height(32.dp)) // Space between password and button
 
-        // Submit Button
         Button(
-            onClick = { /* No functionality for now */ },
+            onClick = { },
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(text = "Submit")
