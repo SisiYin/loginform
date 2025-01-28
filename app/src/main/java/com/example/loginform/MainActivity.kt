@@ -89,7 +89,7 @@ fun LoginFormUI(modifier: Modifier = Modifier) {
             onClick = { },
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(text = "Submit")
+            Text(text = stringResource(R.string.button_submit))
         }
     }
 }
