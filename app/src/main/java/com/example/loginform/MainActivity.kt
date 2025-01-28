@@ -39,12 +39,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun LoginFormUI(modifier: Modifier = Modifier) {
-    // State variables for email and password (not used for actual functionality)
+
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
-
-    // Main column layout
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -71,7 +69,7 @@ fun LoginFormUI(modifier: Modifier = Modifier) {
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
             modifier = Modifier.fillMaxWidth()
         )
-        Spacer(modifier = Modifier.height(16.dp)) // Space between fields
+        Spacer(modifier = Modifier.height(16.dp))
 
         OutlinedTextField(
             value = password,
@@ -83,7 +81,7 @@ fun LoginFormUI(modifier: Modifier = Modifier) {
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             modifier = Modifier.fillMaxWidth()
         )
-        Spacer(modifier = Modifier.height(32.dp)) // Space between password and button
+        Spacer(modifier = Modifier.height(32.dp))
 
         Button(
             onClick = { },
